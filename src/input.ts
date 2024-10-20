@@ -382,26 +382,20 @@ export function AtemUSKDVEPropertiesPickers(): {
 } {
 	const allProps: Omit<ReturnType<typeof AtemUSKDVEPropertiesPickers>, 'properties'> = {
 		positionX: {
-			type: 'number',
+			type: 'textinput',
 			label: 'Position: X',
 			id: 'positionX',
-			default: 0,
-			min: -1000,
-			range: true,
-			step: 0.01,
-			max: 1000,
+			default: '0',
+			useVariables: true,
 			isVisible: (opts) => Array.isArray(opts.properties) && opts.properties.includes('positionX'),
 		},
 		positionY: {
-			type: 'number',
+			type: 'textinput',
 			label: 'Position: Y',
 			id: 'positionY',
-			default: 0,
-			range: true,
-			min: -1000,
-			step: 0.01,
-			max: 1000,
-			isVisible: (opts) => Array.isArray(opts.properties) && opts.properties.includes('positionY'),
+			default: '0',
+			useVariables: true,
+			isVisible: (opts) => Array.isArray(opts.properties) && opts.properties.includes('positionX'),
 		},
 		sizeX: {
 			type: 'number',
